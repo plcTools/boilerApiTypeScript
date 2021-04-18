@@ -1,13 +1,14 @@
 import express from 'express'
 import morgan from 'morgan'
+require('dotenv').config()
 
 const app:express.Application = express()
-const port:number = 3000
+const port:any = process.env.PORT
 
 app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
-  res.send('The sedulous hyena ate the antelope!')
+  res.send('Welcome to plcTools')
 })
 
 app.listen(port || 3001, function () {
